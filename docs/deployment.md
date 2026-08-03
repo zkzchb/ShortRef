@@ -1,5 +1,7 @@
 # Deployment
 
+[English](deployment.md) | [简体中文](deployment-zhcn.md)
+
 ## 1. Deploy the Worker
 
 From the Worker directory:
@@ -11,6 +13,8 @@ npx wrangler login
 npm run deploy:dry
 npm run deploy
 ```
+
+The same Wrangler deployment uploads the Worker code and the two generic HTML files in `worker/public/`. They are exposed to the Worker through the `ASSETS` binding; no separate Cloudflare Pages project is required.
 
 `wrangler.jsonc` defines the `SHORTREF_KV` binding without a namespace ID. On a first Wrangler deployment, Cloudflare can provision the namespace and update the local configuration. If you prefer, create a KV namespace manually and add its ID to the binding:
 
@@ -65,4 +69,4 @@ npm run check
 npm run deploy:dry
 ```
 
-No Cloudflare API token is needed by the Worker at runtime. The KV binding is its only runtime dependency.
+No Cloudflare API token is needed by the Worker at runtime. Its runtime bindings are `SHORTREF_KV` for redirect mappings and `ASSETS` for the generic service and 404 pages.
