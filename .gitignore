@@ -1,0 +1,25 @@
+# Dependencies and Cloudflare local state
+node_modules/
+.wrangler/
+.dev.vars
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# Private ShortRef configuration and data
+config.json
+ShortRefData/
+data/
+records/
+backups/
+index.json
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
