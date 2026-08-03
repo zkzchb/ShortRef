@@ -68,4 +68,4 @@ python -m unittest discover -s skill/shortref/tests -v
 
 ## 许可证
 
-MIT
+本项目采用 [GNU Affero General Public License v3.0](LICENSE)（AGPL-3.0）。
