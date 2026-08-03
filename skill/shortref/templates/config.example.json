@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "base_url": "https://reference.gany.app",
+  "data_dir": "D:/ShortRefData",
+  "cloudflare": {
+    "account_id": "REPLACE_WITH_CLOUDFLARE_ACCOUNT_ID",
+    "namespace_id": "REPLACE_WITH_KV_NAMESPACE_ID",
+    "api_token_env": "CLOUDFLARE_SHORTREF_TOKEN"
+  },
+  "hash": {
+    "algorithm": "sha256-base62-v1",
+    "initial_length": 8,
+    "max_length": 12
+  },
+  "storage": {
+    "backup_limit": 30
+  }
+}
