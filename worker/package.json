@@ -1,0 +1,19 @@
+{
+  "name": "shortref-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "deploy:dry": "wrangler deploy --dry-run",
+    "test": "node --test",
+    "check": "node --check src/index.js && node --test"
+  },
+  "devDependencies": {
+    "wrangler": "^4.113.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
