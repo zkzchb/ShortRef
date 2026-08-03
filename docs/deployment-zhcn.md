@@ -1,6 +1,6 @@
 # 部署
 
-[English](deployment.md) | 简体中文
+[English](deployment.md) | **简体中文**
 
 ## 1. 部署 Worker
 
@@ -13,6 +13,8 @@ npx wrangler login
 npm run deploy:dry
 npm run deploy
 ```
+
+同一次 Wrangler 部署会同时上传 Worker 代码和 `worker/public/` 中的两个通用 HTML 页面。它们通过 `ASSETS` binding 提供给 Worker，不需要另外创建 Cloudflare Pages 项目。
 
 `wrangler.jsonc` 中定义了未填写 namespace ID 的 `SHORTREF_KV` binding。首次使用 Wrangler 部署时，Cloudflare 可以自动创建 namespace，并更新本地配置。你也可以手动创建 KV namespace，然后把 ID 添加到 binding 中：
 
@@ -67,4 +69,4 @@ npm run check
 npm run deploy:dry
 ```
 
-Worker 运行时不需要 Cloudflare API Token。KV binding 是它唯一的运行时依赖。
+Worker 运行时不需要 Cloudflare API Token。它的运行时绑定包括：用于跳转映射的 `SHORTREF_KV`，以及用于通用服务页和 404 页面的 `ASSETS`。
